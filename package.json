@@ -32,6 +32,54 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs",
       "default": "./dist/index.js"
+    },
+    "./defaults": {
+      "types": "./dist/defaults.d.ts",
+      "import": "./dist/defaults.js",
+      "require": "./dist/defaults.cjs",
+      "default": "./dist/defaults.js"
+    },
+    "./defaults/attributes/globals": {
+      "types": "./dist/lib/default/attributes/globals.d.ts",
+      "import": "./dist/lib/default/attributes/globals.js",
+      "require": "./dist/lib/default/attributes/globals.cjs",
+      "default": "./dist/lib/default/attributes/globals.js"
+    },
+    "./defaults/attributes/others": {
+      "types": "./dist/lib/default/attributes/others.d.ts",
+      "import": "./dist/lib/default/attributes/others.js",
+      "require": "./dist/lib/default/attributes/others.cjs",
+      "default": "./dist/lib/default/attributes/others.js"
+    },
+    "./defaults/attributes/shared": {
+      "types": "./dist/lib/default/attributes/shared.d.ts",
+      "import": "./dist/lib/default/attributes/shared.js",
+      "require": "./dist/lib/default/attributes/shared.cjs",
+      "default": "./dist/lib/default/attributes/shared.js"
+    },
+    "./defaults/primitives": {
+      "types": "./dist/lib/default/primitives.d.ts",
+      "import": "./dist/lib/default/primitives.js",
+      "require": "./dist/lib/default/primitives.cjs",
+      "default": "./dist/lib/default/primitives.js"
+    },
+    "./defaults/regexes": {
+      "types": "./dist/lib/default/regexes.d.ts",
+      "import": "./dist/lib/default/regexes.js",
+      "require": "./dist/lib/default/regexes.cjs",
+      "default": "./dist/lib/default/regexes.js"
+    },
+    "./defaults/tags": {
+      "types": "./dist/lib/default/tags.d.ts",
+      "import": "./dist/lib/default/tags.js",
+      "require": "./dist/lib/default/tags.cjs",
+      "default": "./dist/lib/default/tags.js"
+    },
+    "./utils/url": {
+      "types": "./dist/lib/utils/url.d.ts",
+      "import": "./dist/lib/utils/url.js",
+      "require": "./dist/lib/utils/url.cjs",
+      "default": "./dist/lib/utils/url.js"
     }
   },
   "main": "./dist/index.cjs",
