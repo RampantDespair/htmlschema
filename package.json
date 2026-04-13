@@ -28,66 +28,99 @@
   "type": "commonjs",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./defaults": {
-      "types": "./dist/defaults.d.ts",
-      "import": "./dist/defaults.js",
-      "require": "./dist/defaults.cjs",
-      "default": "./dist/defaults.js"
+      "import": {
+        "types": "./dist/defaults.d.mts",
+        "default": "./dist/defaults.mjs"
+      },
+      "require": {
+        "types": "./dist/defaults.d.cts",
+        "default": "./dist/defaults.cjs"
+      }
     },
     "./defaults/attributes/globals": {
-      "types": "./dist/lib/default/attributes/globals.d.ts",
-      "import": "./dist/lib/default/attributes/globals.js",
-      "require": "./dist/lib/default/attributes/globals.cjs",
-      "default": "./dist/lib/default/attributes/globals.js"
+      "import": {
+        "types": "./dist/lib/default/attributes/globals.d.mts",
+        "default": "./dist/lib/default/attributes/globals.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/default/attributes/globals.d.cts",
+        "default": "./dist/lib/default/attributes/globals.cjs"
+      }
     },
     "./defaults/attributes/others": {
-      "types": "./dist/lib/default/attributes/others.d.ts",
-      "import": "./dist/lib/default/attributes/others.js",
-      "require": "./dist/lib/default/attributes/others.cjs",
-      "default": "./dist/lib/default/attributes/others.js"
+      "import": {
+        "types": "./dist/lib/default/attributes/others.d.mts",
+        "default": "./dist/lib/default/attributes/others.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/default/attributes/others.d.cts",
+        "default": "./dist/lib/default/attributes/others.cjs"
+      }
     },
     "./defaults/attributes/shared": {
-      "types": "./dist/lib/default/attributes/shared.d.ts",
-      "import": "./dist/lib/default/attributes/shared.js",
-      "require": "./dist/lib/default/attributes/shared.cjs",
-      "default": "./dist/lib/default/attributes/shared.js"
+      "import": {
+        "types": "./dist/lib/default/attributes/shared.d.mts",
+        "default": "./dist/lib/default/attributes/shared.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/default/attributes/shared.d.cts",
+        "default": "./dist/lib/default/attributes/shared.cjs"
+      }
     },
     "./defaults/primitives": {
-      "types": "./dist/lib/default/primitives.d.ts",
-      "import": "./dist/lib/default/primitives.js",
-      "require": "./dist/lib/default/primitives.cjs",
-      "default": "./dist/lib/default/primitives.js"
+      "import": {
+        "types": "./dist/lib/default/primitives.d.mts",
+        "default": "./dist/lib/default/primitives.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/default/primitives.d.cts",
+        "default": "./dist/lib/default/primitives.cjs"
+      }
     },
     "./defaults/regexes": {
-      "types": "./dist/lib/default/regexes.d.ts",
-      "import": "./dist/lib/default/regexes.js",
-      "require": "./dist/lib/default/regexes.cjs",
-      "default": "./dist/lib/default/regexes.js"
+      "import": {
+        "types": "./dist/lib/default/regexes.d.mts",
+        "default": "./dist/lib/default/regexes.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/default/regexes.d.cts",
+        "default": "./dist/lib/default/regexes.cjs"
+      }
     },
     "./defaults/tags": {
-      "types": "./dist/lib/default/tags.d.ts",
-      "import": "./dist/lib/default/tags.js",
-      "require": "./dist/lib/default/tags.cjs",
-      "default": "./dist/lib/default/tags.js"
+      "import": {
+        "types": "./dist/lib/default/tags.d.mts",
+        "default": "./dist/lib/default/tags.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/default/tags.d.cts",
+        "default": "./dist/lib/default/tags.cjs"
+      }
     },
     "./utils/url": {
-      "types": "./dist/lib/utils/url.d.ts",
-      "import": "./dist/lib/utils/url.js",
-      "require": "./dist/lib/utils/url.cjs",
-      "default": "./dist/lib/utils/url.js"
+      "import": {
+        "types": "./dist/lib/utils/url.d.mts",
+        "default": "./dist/lib/utils/url.mjs"
+      },
+      "require": {
+        "types": "./dist/lib/utils/url.d.cts",
+        "default": "./dist/lib/utils/url.cjs"
+      }
     }
   },
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
   "scripts": {
     "build": "tsdown",
     "clean": "rimraf dist",
