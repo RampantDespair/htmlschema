@@ -130,9 +130,7 @@
   },
   "dependencies": {
     "parse5": "^8.0.0",
-    "parse5-htmlparser2-tree-adapter": "^8.0.0",
-    "postcss": "^8.5.9",
-    "postcss-value-parser": "^4.2.0"
+    "parse5-htmlparser2-tree-adapter": "^8.0.0"
   },
   "devDependencies": {
     "@eslint/config-inspector": "^1.5.0",
