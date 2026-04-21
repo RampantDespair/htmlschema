@@ -188,7 +188,7 @@ describe("walker", () => {
     });
 
     it("handles attributes", () => {
-      const html = '<div class="test" id="example">Hello</div>';
+      const html = "<div class=\"test\" id=\"example\">Hello</div>";
       const frag: Htmlparser2TreeAdapterMap["documentFragment"] = parseFragment(
         html,
         { treeAdapter: adapter },
@@ -358,7 +358,7 @@ describe("walker", () => {
     });
 
     it("handles attribute enforcement failure", () => {
-      const html = '<div class="test">Hello</div>';
+      const html = "<div class=\"test\">Hello</div>";
       const frag: Htmlparser2TreeAdapterMap["documentFragment"] = parseFragment(
         html,
         { treeAdapter: adapter },
@@ -446,7 +446,7 @@ describe("walker", () => {
     });
 
     it("handles attribute enforcement that returns false", () => {
-      const html = '<div class="test">Hello</div>';
+      const html = "<div class=\"test\">Hello</div>";
       const frag: Htmlparser2TreeAdapterMap["documentFragment"] = parseFragment(
         html,
         { treeAdapter: adapter },

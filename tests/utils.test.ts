@@ -82,21 +82,28 @@ describe("buildAllowedUrlRegex", () => {
   });
 
   it("throws on invalid protocol in list", () => {
-    expect(() =>
-      buildAllowedUrlRegex(["1http"], ["example.com"], false),
+    expect(() => {
+      return buildAllowedUrlRegex(["1http"], ["example.com"], false);
+    },
     ).toThrow(/Invalid protocol: 1http/);
   });
 
   it("throws on invalid host in list (domain, IPv4, IPv6)", () => {
-    expect(() => buildAllowedUrlRegex(["http"], ["-bad.com"], false)).toThrow(
+    expect(() => {
+      return buildAllowedUrlRegex(["http"], ["-bad.com"], false);
+    }).toThrow(
       /Invalid host: -bad\.com/,
     );
 
-    expect(() => buildAllowedUrlRegex(["http"], ["999.0.0.1"], false)).toThrow(
+    expect(() => {
+      return buildAllowedUrlRegex(["http"], ["999.0.0.1"], false);
+    }).toThrow(
       /Invalid host: 999\.0\.0\.1/,
     );
 
-    expect(() => buildAllowedUrlRegex(["http"], ["2001:::1"], false)).toThrow(
+    expect(() => {
+      return buildAllowedUrlRegex(["http"], ["2001:::1"], false);
+    }).toThrow(
       /Invalid host: 2001:::1/,
     );
   });
@@ -205,9 +212,15 @@ describe("hostPatternFromList", () => {
   });
 
   it("throws on invalid host in list", () => {
-    expect(() => hostPatternFromList(["-bad.com"])).toThrow(/Invalid host/);
-    expect(() => hostPatternFromList(["999.0.0.1"])).toThrow(/Invalid host/);
-    expect(() => hostPatternFromList(["2001:::1"])).toThrow(/Invalid host/);
+    expect(() => {
+      return hostPatternFromList(["-bad.com"]);
+    }).toThrow(/Invalid host/);
+    expect(() => {
+      return hostPatternFromList(["999.0.0.1"]);
+    }).toThrow(/Invalid host/);
+    expect(() => {
+      return hostPatternFromList(["2001:::1"]);
+    }).toThrow(/Invalid host/);
   });
 
   it("escapes dots and hyphens correctly and tolerates duplicates", () => {

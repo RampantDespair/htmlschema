@@ -17,7 +17,9 @@ describe("matchComparator", () => {
   });
 
   it("matches function comparator", () => {
-    const fn = (v: string) => v.startsWith("ok-");
+    const fn = (v: string) => {
+      return v.startsWith("ok-");
+    };
     expect(matchComparator(fn, "ok-good")).toBe(true);
     expect(matchComparator(fn, "bad")).toBe(false);
   });
@@ -143,7 +145,9 @@ describe("unwrapInParent", () => {
     // Initial order: [before, target(child1, child2), after]
     expect(
       parent.children.map(
-        (c) => (c as Htmlparser2TreeAdapterMap["element"]).tagName,
+        (c) => {
+          return (c as Htmlparser2TreeAdapterMap["element"]).tagName;
+        },
       ),
     ).toEqual(["before", "target", "after"]);
 
@@ -152,7 +156,9 @@ describe("unwrapInParent", () => {
     // After unwrapping: children inserted before 'after'
     expect(
       parent.children.map(
-        (c) => (c as Htmlparser2TreeAdapterMap["element"]).tagName,
+        (c) => {
+          return (c as Htmlparser2TreeAdapterMap["element"]).tagName;
+        },
       ),
     ).toEqual(["before", "c1", "c2", "after"]);
     expect(target.parentNode).toBeNull();
@@ -173,7 +179,9 @@ describe("unwrapInParent", () => {
     // Initial order: [before, target(child1, child2)]
     expect(
       parent.children.map(
-        (c) => (c as Htmlparser2TreeAdapterMap["element"]).tagName,
+        (c) => {
+          return (c as Htmlparser2TreeAdapterMap["element"]).tagName;
+        },
       ),
     ).toEqual(["before", "target"]);
 
@@ -182,7 +190,9 @@ describe("unwrapInParent", () => {
     // After unwrapping: children appended at the end
     expect(
       parent.children.map(
-        (c) => (c as Htmlparser2TreeAdapterMap["element"]).tagName,
+        (c) => {
+          return (c as Htmlparser2TreeAdapterMap["element"]).tagName;
+        },
       ),
     ).toEqual(["before", "c1", "c2"]);
     expect(target.parentNode).toBeNull();

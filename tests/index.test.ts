@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { enforceHtml } from "../src";
+import { enforceHtml } from "../src/index";
 
 describe("enforceHtml", () => {
   it("returns empty string for empty input", () => {
@@ -33,7 +33,7 @@ describe("enforceHtml", () => {
   });
 
   it("handles attributes", () => {
-    const html = '<div class="test" id="example">Hello</div>';
+    const html = "<div class=\"test\" id=\"example\">Hello</div>";
     const result = enforceHtml(html, {
       tags: {
         div: {
@@ -54,7 +54,7 @@ describe("enforceHtml", () => {
   });
 
   it("removes disallowed attributes", () => {
-    const html = '<div class="test" onclick="alert(\'xss\')">Hello</div>';
+    const html = "<div class=\"test\" onclick=\"alert('xss')\">Hello</div>";
     const result = enforceHtml(html, {
       errorHandling: {
         attribute: "discardAttribute",
@@ -70,7 +70,7 @@ describe("enforceHtml", () => {
         },
       },
     });
-    expect(result).toBe('<div class="test">Hello</div>');
+    expect(result).toBe("<div class=\"test\">Hello</div>");
   });
 
   it("handles top level limits - children", () => {
@@ -150,7 +150,7 @@ describe("enforceHtml", () => {
   });
 
   it("handles self-closing elements", () => {
-    const html = '<img src="test.jpg" /><br />';
+    const html = "<img src=\"test.jpg\" /><br />";
     const result = enforceHtml(html, {
       tags: {
         br: {},
@@ -164,7 +164,7 @@ describe("enforceHtml", () => {
         },
       },
     });
-    expect(result).toBe('<img src="test.jpg"><br>');
+    expect(result).toBe("<img src=\"test.jpg\"><br>");
   });
 
   it("handles error handling modes", () => {
@@ -221,7 +221,7 @@ describe("enforceHtml", () => {
   });
 
   it("handles attribute value validation", () => {
-    const html = '<a href="https://example.com">Link</a>';
+    const html = "<a href=\"https://example.com\">Link</a>";
     const result = enforceHtml(html, {
       tags: {
         a: {
@@ -258,7 +258,7 @@ describe("enforceHtml", () => {
   });
 
   it("handles record attribute values", () => {
-    const html = '<div data="key1=value1,key2=value2">Content</div>';
+    const html = "<div data=\"key1=value1,key2=value2\">Content</div>";
     const result = enforceHtml(html, {
       tags: {
         div: {
@@ -280,7 +280,7 @@ describe("enforceHtml", () => {
   });
 
   it("handles set attribute values", () => {
-    const html = '<div class="a b c">Content</div>';
+    const html = "<div class=\"a b c\">Content</div>";
     const result = enforceHtml(html, {
       tags: {
         div: {
@@ -316,7 +316,7 @@ describe("enforceHtml", () => {
         },
       },
     });
-    expect(result).toBe('<div id="default-id">Content</div>');
+    expect(result).toBe("<div id=\"default-id\">Content</div>");
   });
 
   it("handles empty input gracefully", () => {
@@ -382,7 +382,7 @@ describe("enforceHtml", () => {
   });
 
   it("handles attributes with special characters", () => {
-    const html = '<div data-value="test &amp; value">Content</div>';
+    const html = "<div data-value=\"test &amp; value\">Content</div>";
     const result = enforceHtml(html, {
       tags: {
         div: {
@@ -399,7 +399,7 @@ describe("enforceHtml", () => {
   });
 
   it("handles boolean attributes", () => {
-    const html = '<input type="checkbox" checked disabled />';
+    const html = "<input type=\"checkbox\" checked disabled />";
     const result = enforceHtml(html, {
       tags: {
         input: {
@@ -420,7 +420,7 @@ describe("enforceHtml", () => {
         },
       },
     });
-    expect(result).toBe('<input type="checkbox" checked="" disabled="">');
+    expect(result).toBe("<input type=\"checkbox\" checked=\"\" disabled=\"\">");
   });
 
   it("returns empty string when top level children limit exceeded with discardElement", () => {

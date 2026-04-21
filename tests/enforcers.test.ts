@@ -350,14 +350,18 @@ describe("enforceTag", () => {
     const el = adapter.createElement("this", html.NS.HTML, []);
     adapter.appendChild(base, el);
 
-    expect(() => enforceTag(el)).toThrow();
+    expect(() => {
+      return enforceTag(el);
+    }).toThrow();
   });
 
   it("throws when tag is denied (errorHandling: throwError)", () => {
     const el = adapter.createElement("this", html.NS.HTML, []);
     adapter.appendChild(base, el);
 
-    expect(() => enforceTag(el, undefined, "throwError")).toThrow();
+    expect(() => {
+      return enforceTag(el, undefined, "throwError");
+    }).toThrow();
   });
 
   it("discards tag when tag is denied (errorHandling: discardElement)", () => {
@@ -415,11 +419,12 @@ describe("enforceAttribute", () => {
     const el = adapter.createElement("this", html.NS.HTML, [templateAttribute]);
     adapter.appendChild(base, el);
 
-    expect(() =>
-      enforceAttribute(
+    expect(() => {
+      return enforceAttribute(
         { key: templateAttribute.name, value: templateAttribute.value },
         el,
-      ),
+      );
+    },
     ).toThrow();
   });
 
@@ -427,13 +432,14 @@ describe("enforceAttribute", () => {
     const el = adapter.createElement("this", html.NS.HTML, [templateAttribute]);
     adapter.appendChild(base, el);
 
-    expect(() =>
-      enforceAttribute(
+    expect(() => {
+      return enforceAttribute(
         { key: templateAttribute.name, value: templateAttribute.value },
         el,
         undefined,
         "throwError",
-      ),
+      );
+    },
     ).toThrow();
   });
 
@@ -683,12 +689,13 @@ describe("enforceAttributeRecordValue", () => {
       },
     };
 
-    expect(() =>
-      enforceAttributeRecordValue(
+    expect(() => {
+      return enforceAttributeRecordValue(
         { key: "record", value: "key1=value1,unknown=value2" },
         el,
         rule,
-      ),
+      );
+    },
     ).toThrow();
   });
 });
@@ -753,8 +760,9 @@ describe("enforceAttributeSetValue", () => {
       values: ["a", "b", "c"],
     };
 
-    expect(() =>
-      enforceAttributeSetValue({ key: "set", value: "a,b,c" }, el, rule),
+    expect(() => {
+      return enforceAttributeSetValue({ key: "set", value: "a,b,c" }, el, rule);
+    },
     ).toThrow();
   });
 
@@ -788,8 +796,9 @@ describe("enforceAttributeSetValue", () => {
       values: ["a", "b"],
     };
 
-    expect(() =>
-      enforceAttributeSetValue({ key: "set", value: "a,b,invalid" }, el, rule),
+    expect(() => {
+      return enforceAttributeSetValue({ key: "set", value: "a,b,invalid" }, el, rule);
+    },
     ).toThrow();
   });
 
