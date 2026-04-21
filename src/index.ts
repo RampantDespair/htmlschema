@@ -1,9 +1,8 @@
+import type { SchemaOptions } from "./types/schema";
 import type { Htmlparser2TreeAdapterMap } from "parse5-htmlparser2-tree-adapter";
 
 import { parseFragment, serialize } from "parse5";
 import { adapter } from "parse5-htmlparser2-tree-adapter";
-
-import type { SchemaOptions } from "./types/schema";
 
 import { handleTagChildrenError } from "./lib/handlers/direct";
 import { walkNode } from "./lib/walker";
