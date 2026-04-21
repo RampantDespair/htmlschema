@@ -1,0 +1,49 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": { "source.organizeImports": "never" }
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": { "source.organizeImports": "never" }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonl]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "sqlfluff.vscode-sqlfluff",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": { "source.organizeImports": "never" }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": { "source.organizeImports": "never" }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never",
+    "source.removeUnusedImports": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "editor.tabSize": 2,
+  "json.schemaDownload.enable": true,
+  "sqlfluff.config": ".sqlfluff",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "sonarlint.connectedMode.project": {
+    "connectionId": "tower",
+    "projectKey": "root_shadow_cdfc76a8-44dc-4e24-9da8-657923eea653"
+  },
+  "stylelint.enable": true,
+  "stylelint.lintFiles.glob": "**/*.{css,scss}"
+}
